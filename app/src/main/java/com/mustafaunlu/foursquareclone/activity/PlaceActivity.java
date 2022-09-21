@@ -22,6 +22,7 @@ import android.widget.Toast;
 
 import com.google.android.material.snackbar.Snackbar;
 import com.mustafaunlu.foursquareclone.databinding.ActivityPlaceBinding;
+import com.mustafaunlu.foursquareclone.model.Place;
 
 import java.io.IOException;
 
@@ -43,7 +44,16 @@ public class PlaceActivity extends AppCompatActivity {
 
 
     public void next(View view){
+        //Save data
+        Place place=new Place();
+        place.setName(binding.nameEditText.getText().toString());
+        place.setType(binding.typeEditText.getText().toString());
+        place.setAtmosphere(binding.atmosphereEditText.getText().toString());
+        place.setImage(selectedImage);
 
+        //Intent
+        Intent intent=new Intent(PlaceActivity.this,MapsActivity.class);
+        startActivity(intent);
     }
 
     public void select(View view){
