@@ -1,8 +1,10 @@
-package com.mustafaunlu.foursquareclone;
+package com.mustafaunlu.foursquareclone.activity;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+
+import com.mustafaunlu.foursquareclone.R;
 
 public class MainActivity extends AppCompatActivity {
 
