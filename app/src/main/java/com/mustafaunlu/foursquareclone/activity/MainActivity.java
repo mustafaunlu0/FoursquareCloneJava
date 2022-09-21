@@ -37,7 +37,9 @@ public class MainActivity extends AppCompatActivity {
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         if(item.getItemId() == R.id.createPlace){
-            //to DetailActivity
+            //to PlaceActivity
+            Intent intent=new Intent(MainActivity.this,PlaceActivity.class);
+            startActivity(intent);
         }else if(item.getItemId() == R.id.logOut){
             //log out
             ParseUser.logOutInBackground(new LogOutCallback() {
