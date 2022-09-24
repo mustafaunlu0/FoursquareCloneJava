@@ -3,7 +3,7 @@ package com.mustafaunlu.foursquareclone.model;
 import android.graphics.Bitmap;
 
 public class Place {
-    public static Place instance;
+    private static Place instance;
 
     private Bitmap image;
     private String name;

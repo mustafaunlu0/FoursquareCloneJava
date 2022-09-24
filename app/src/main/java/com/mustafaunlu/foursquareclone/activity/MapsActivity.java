@@ -81,8 +81,8 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
     @Override
     public void onMapReady(GoogleMap googleMap) {
 
-        //mMap=googleMap;
-        //mMap.setOnMapLongClickListener(this);
+        mMap=googleMap;
+        mMap.setOnMapLongClickListener(this);
 
 
 
@@ -118,7 +118,7 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         MenuInflater menuInflater=getMenuInflater();
-        menuInflater.inflate(R.menu.menu,menu);
+        menuInflater.inflate(R.menu.maps_menu,menu);
         return super.onCreateOptionsMenu(menu);
     }
 
@@ -136,19 +136,22 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
         Place place=Place.getInstance();
 
         String placeName=place.getName();
+        System.out.println("name: "+placeName);
         String placeType=place.getType();
+        System.out.println("type: "+placeType);
         String placeAtmosphere=place.getAtmosphere();
-        /*
-        Bitmap placeImage=place.getImage();
+        System.out.println("atmosphere: "+placeAtmosphere);
 
+
+        Bitmap placeImage=place.getImage();
         ByteArrayOutputStream byteArrayOutputStream=new ByteArrayOutputStream();
         placeImage.compress(Bitmap.CompressFormat.PNG,50,byteArrayOutputStream);
         byte[] bytes=byteArrayOutputStream.toByteArray();
 
         ParseFile parseFile=new ParseFile("image.pnp",bytes);
- */
+
         ParseObject parseObject=new ParseObject("Places");
-        //parseObject.put("image",parseFile);
+        parseObject.put("image",parseFile);
         parseObject.put("name",placeName);
         System.out.println("name: "+placeName);
         parseObject.put("type",placeType);

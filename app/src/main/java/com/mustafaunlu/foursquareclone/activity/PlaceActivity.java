@@ -45,12 +45,18 @@ public class PlaceActivity extends AppCompatActivity {
 
     public void next(View view){
         //Save data
-        Place place=new Place();
+        Place place=Place.getInstance();
         place.setName(binding.nameEditText.getText().toString());
-        place.setType(binding.typeEditText.getText().toString());
-        place.setAtmosphere(binding.atmosphereEditText.getText().toString());
-        place.setImage(selectedImage);
+        System.out.println("Next->name: "+binding.nameEditText.getText().toString());
 
+        place.setType(binding.typeEditText.getText().toString());
+        System.out.println("Next->type: "+binding.typeEditText.getText().toString());
+
+
+        place.setAtmosphere(binding.atmosphereEditText.getText().toString());
+        System.out.println("Next->atmosphere: "+binding.atmosphereEditText.getText().toString());
+        place.setImage(selectedImage);
+        System.out.println("selectedImage"+selectedImage.toString());
         //Intent
         Intent intent=new Intent(PlaceActivity.this,MapsActivity.class);
         startActivity(intent);
